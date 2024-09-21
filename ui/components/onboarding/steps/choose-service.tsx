@@ -5,6 +5,7 @@ import { Service } from "@/lib/types";
 import { useState } from "react";
 import AdvertiserIllustration from "@/assets/onboarding/advertiser.svg";
 import PublisherIllustration from "@/assets/onboarding/publisher.svg";
+import Image from "next/image";
 
 const ChooseService = () => {
 	const [selectedService, setSelectedService] = useState<Service | null>(null);
@@ -53,7 +54,7 @@ const ServiceCard = (props: ServiceCardProps) => {
       `}
 			onClick={props.onClick}
 		>
-			<img
+			<Image
 				src={props.illustration}
 				className="object-cover w-full"
 				alt="advertiser"

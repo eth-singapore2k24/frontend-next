@@ -3,6 +3,7 @@ import highlight from "@/assets/effects/highlight.png";
 import { Button } from "../ui/button";
 import { ArrowRight } from "@phosphor-icons/react";
 import { useRouter } from 'next/navigation';
+import Image from "next/image";
 
 
 const Hero = () => {
@@ -21,7 +22,7 @@ const Hero = () => {
         <h1 className="text-7xl font-display leading-[1.2]">
           Personalized ads without <br /> the cost of{" "}
           <span className="relative px-2 box-border items-center justify-center inline-flex">
-            <img src={highlight} className="absolute -z-10 top-1" /> personal
+            <Image src={highlight} alt="highlight" className="absolute -z-10 top-1" /> personal
             privacy
           </span>
         </h1>

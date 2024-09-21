@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import HeaderImage from "@/assets/onboarding/header.svg";
 import NewSiteIcon from "@/assets/dashboard/newsite.svg";
+import Image from "next/image";
 
 const PublishWebsiteDialog = () => {
 	const [open, setOpen] = useState(false);
@@ -23,14 +24,14 @@ const PublishWebsiteDialog = () => {
 					className="w-full bg-[#EAE9D9] text-[#6F5644] hover:bg-[#D9D8C8] text-seminbold"
 				>
 					<div className="flex items-center justify-center space-x-2">
-						<img src={NewSiteIcon} className="w-5 h-5" alt="Add Site" />
+						<Image src={NewSiteIcon} className="w-5 h-5" alt="Add Site" />
 						<span>Add a new site</span>
 					</div>
 				</Button>
 			</DialogTrigger>
 			<DialogContent className="sm:max-w-[600px] p-0">
 				<div className="relative">
-					<img
+					<Image
 						src={HeaderImage}
 						className="h-[14rem] w-full object-cover object-top"
 						alt="header"

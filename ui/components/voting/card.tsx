@@ -15,6 +15,7 @@ import AdSVG from ".@/assets/voting/advertisement.svg";
 import VoteYes from "@/assets/voting/voteYes.svg";
 import VoteNo from "@/assets/voting/voteNo.svg";
 import Header from "@/assets/onboarding/header.svg";
+import Image from "next/image";
 
 interface OverviewCardProps {
   title: string;
@@ -70,7 +71,7 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
     <Dialog open={open} onOpenChange={setOpen}>
       <div className="self-stretch rounded-xl bg-white p-6 shadow-sm border border-[#ECEBD4] text-[#6F5644]">
         <div className="flex border-b pb-2">
-          <img
+          <Image
             src={AdSVG}
             className="display-inline"
             alt="Advertisement icon"
@@ -85,7 +86,7 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
           )}
           <DialogContent className="rounded-none space-y-2 w-full">
             <CardHeader>
-              <img
+              <Image
                 src={Header}
                 className="h-[8rem] w-full object-cover object-top z-10"
                 alt="header"
@@ -191,7 +192,8 @@ const ServiceCard = (props: ServiceCardProps) => {
       `}
       onClick={props.onClick}
     >
-      <img
+      <Image
+
         src={props.illustration}
         className="object-cover w-full"
         alt="advertiser"

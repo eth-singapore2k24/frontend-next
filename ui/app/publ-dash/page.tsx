@@ -1,3 +1,5 @@
+"use client";
+
 import Nav from "@/components/dashboard/nav";
 import Sites from "@/components/dashboard/publisher/sites";
 

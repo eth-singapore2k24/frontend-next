@@ -1,3 +1,5 @@
+"use client";
+
 import Vote from "@/components/voting/vote";
 
 const AdvertDash = () => {

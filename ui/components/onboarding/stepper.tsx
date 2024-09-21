@@ -4,6 +4,7 @@ import ChooseService from "@/components/onboarding/steps/choose-service";
 import HeaderImage from "@/assets/onboarding/header.svg";
 import { FadingBorder } from "@/components/ui/fading-border";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 
 interface step {
   step: number;
@@ -31,7 +32,7 @@ const Stepper = () => {
 
   return (
     <motion.div className="w-full relative flex flex-col items-center justify-center">
-      <img
+      <Image
         src={HeaderImage}
         className="h-[14rem] w-full object-cover object-top z-10"
         alt="header"

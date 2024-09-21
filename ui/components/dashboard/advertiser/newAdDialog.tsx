@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { X } from "lucide-react";
 import HeaderImage from "@/assets/onboarding/header.svg";
 import NewAdIcon from "@/assets/dashboard/newsite.svg";
+import Image from "next/image";
 
 const AddNewAdDialog = () => {
 	const [open, setOpen] = useState(false);
@@ -45,14 +46,14 @@ const AddNewAdDialog = () => {
 					className="w-full bg-[#EAE9D9] text-[#6F5644] hover:bg-[#D9D8C8] text-semibold"
 				>
 					<div className="flex items-center justify-center space-x-2">
-						<img src={NewAdIcon} className="w-5 h-5" alt="Add Ad" />
+						<Image alt="" src={NewAdIcon} className="w-5 h-5" alt="Add Ad" />
 						<span>Add a new ad</span>
 					</div>
 				</Button>
 			</DialogTrigger>
 			<DialogContent className="sm:max-w-[600px] p-0">
 				<div className="relative">
-					<img
+					<Image
 						src={HeaderImage}
 						className="h-[14rem] w-full object-cover object-top"
 						alt="header"

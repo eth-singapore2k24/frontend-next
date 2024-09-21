@@ -9,6 +9,7 @@ import {
 	Area,
 } from "recharts";
 import CardSVG from "@/assets/dashboard/cardicon.svg";
+import Image from "next/image";
 
 interface OverviewCardProps {
 	title: string;
@@ -54,7 +55,7 @@ const OverviewCard: React.FC<OverviewCardProps> = ({ title, unit }) => {
 	return (
 		<div className="self-stretch rounded-xl bg-white p-6 shadow-sm border border-[#ECEBD4] text-[#6F5644]">
 			<div className="flex border-b pb-2">
-				<img src={CardSVG} className="display-inline " />
+				<Image alt="" src={CardSVG} className="display-inline " />
 				<h3 className="text-lg font-semibold m-1 border-gray-200">{title}</h3>
 			</div>
 			<div className="mt-4 mb-2 ">
