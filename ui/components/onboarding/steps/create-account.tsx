@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Cardholder } from "@phosphor-icons/react";
 import { useRouter } from "next/navigation";
-import { signIn, signOut, useSession } from "next-auth/react"
+import { signIn,  useSession } from "next-auth/react"
 
 interface CreateAccountProps {
   currentStepIndex: number;
@@ -47,7 +47,7 @@ const CreateAccount = (props: CreateAccountProps) => {
           onClick={handleConnect}
           className="w-full mt-0 rounded-xl shadow-button text-center text-lg"
         >
-          <Cardholder className="w-6 h-6 mr-2" /> Connect Dynamic Wallet
+          <Cardholder className="w-6 h-6 mr-2" /> Connect to WorldCoin
         </Button>
       </CardContent>
       <Separator />

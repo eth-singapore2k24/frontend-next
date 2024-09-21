@@ -1,13 +1,17 @@
+"use client";
+
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import highlight from "@/assets/effects/highlight.png";
 import { Button } from "../ui/button";
 import { ArrowRight } from "@phosphor-icons/react";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
+import { useConnect } from "wagmi";
 
 const Hero = () => {
   const router = useRouter();
+  const { connect, connectors } = useConnect();
 
   return (
     <div className="container items-center mt-24">
@@ -22,8 +26,12 @@ const Hero = () => {
         <h1 className="text-7xl font-display leading-[1.2]">
           Personalized ads without <br /> the cost of{" "}
           <span className="relative px-2 box-border items-center justify-center inline-flex">
-            <Image src={highlight} alt="highlight" className="absolute -z-10 top-1" /> personal
-            privacy
+            <Image
+              src={highlight}
+              alt="highlight"
+              className="absolute -z-10 top-1"
+            />{" "}
+            personal privacy
           </span>
         </h1>
         <p className="text-base uppercase text-muted-foreground tracking-wide leading-6">
@@ -37,7 +45,11 @@ const Hero = () => {
         Icon={<ArrowRight weight="bold" />}
         iconPlacement="right"
         className="w-64 rounded-xl shadow-button text-2xl "
-        onClick={() => router.push('/onboard')}
+        onClick={() => {
+          console.log("hi");
+          console.log(connectors);
+          connect({ connector: connectors[0] });
+        }}
       >
         Get Started
       </Button>

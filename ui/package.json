@@ -20,6 +20,7 @@
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.0",
+    "@tanstack/react-query": "^5.56.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "ethers": "^6.13.2",
@@ -27,8 +28,9 @@
     "lucide-react": "^0.445.0",
     "next": "14.2.13",
     "next-auth": "^4.24.7",
-    "react": "^18",
-    "react-dom": "^18",
+    "pino-pretty": "^11.2.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",
     "react-tabs": "^6.0.2",
     "recharts": "^2.12.7",
@@ -36,8 +38,8 @@
     "tabs": "^0.2.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "viem": "^2.21.8",
-    "web3modal": "^1.9.12"
+    "viem": "2.x",
+    "wagmi": "^2.12.12"
   },
   "devDependencies": {
     "@types/node": "^20",

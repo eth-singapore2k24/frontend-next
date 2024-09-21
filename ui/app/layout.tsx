@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { MetaMaskProvider } from "@metamask/sdk-react";
+import { Providers } from "./providers";
 
 const satoshi = localFont({
   src: "../assets/fonts/Satoshi Variable.ttf",
@@ -26,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${satoshi.variable} ${playfair.variable} font-sans antialiased`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
