@@ -11,39 +11,33 @@ import { Button } from "@/components/ui/button";
 import { Cardholder } from "@phosphor-icons/react";
 import { useRouter } from "next/navigation";
 import { signIn,  useSession } from "next-auth/react"
-
+import { useEffect } from "react";
+import { useState } from "react";
 interface CreateAccountProps {
   currentStepIndex: number;
   setCurrentStepIndex: (index: number) => void;
 }
 
 const CreateAccount = (props: CreateAccountProps) => {
+const router = useRouter();
+const { data: session,status } = useSession()
+const [loading, setLoading] = useState(false);
+useEffect(() => {
+  if (status === "authenticated"&&session) {
+    props.setCurrentStepIndex(props.currentStepIndex + 1);
 
-  const handleConnect = async () => {
-    console.log("hi");
-const handleWorldCoinConnect = async () => {
-		console.log("hi");
-		try {
-			const sessionx = await signIn("worldcoin");
-			console.log("session: ", sessionx);
-			const { data: session } = useSession();
-			console.log("sessionUser: ", session.user);
-			if (session) {
-				router.push("/onboard");
-			}
-		} catch (error) {
-			console.error("error: ", error);
-		}
-	}
+  }}, [status, session, props]);
+	const handleConnect = async () => {
+    setLoading(true);
     try {
-      const sessionx = await signIn("worldcoin")
-      console.log("session: ", sessionx);
-      const { data: session } = useSession()
-      console.log("sessionUser: ", session.user);
-    } catch (error) {
-      console.error("error: ", error);
-    }
-  }
+      await signIn("worldcoin", {
+        redirect: false,
+      });}catch(e){
+        console.log(e);
+      }finally{
+        setLoading(false);
+      }
+    };
   return (
     <Card className="rounded-none space-y-5 ">
       <CardHeader>
