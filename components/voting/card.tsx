@@ -11,7 +11,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { Button } from "@/components/ui/button";
-import AdSVG from ".@/assets/voting/advertisement.svg";
+import AdSVG from "@/assets/voting/advertisement.svg";
 import VoteYes from "@/assets/voting/voteYes.svg";
 import VoteNo from "@/assets/voting/voteNo.svg";
 import Header from "@/assets/onboarding/header.svg";

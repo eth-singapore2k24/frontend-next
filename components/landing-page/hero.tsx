@@ -45,10 +45,11 @@ const Hero = () => {
         Icon={<ArrowRight weight="bold" />}
         iconPlacement="right"
         className="w-64 rounded-xl shadow-button text-2xl "
-        onClick={() => {
+        onClick={async () => {
           console.log("hi");
           console.log(connectors);
-          connect({ connector: connectors[0] });
+          await connect({ connector: connectors[0] });
+          router.push("/onboard");
         }}
       >
         Get Started

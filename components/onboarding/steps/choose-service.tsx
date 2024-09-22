@@ -6,9 +6,18 @@ import { useState } from "react";
 import AdvertiserIllustration from "@/assets/onboarding/advertiser.svg";
 import PublisherIllustration from "@/assets/onboarding/publisher.svg";
 import Image from "next/image";
-
+import { useRouter } from "next/router";
+import { Label } from "@/components/ui/label";
 const ChooseService = () => {
+	const router = useRouter();
 	const [selectedService, setSelectedService] = useState<Service | null>(null);
+	const handleConfirm = () => {
+		if (selectedService === "advertiser") {
+			router.push("/advert-dash");
+		} else if (selectedService === "publisher") {
+			router.push("/publ-dash");
+		}
+	}
 	return (
 		<Card className="rounded-none space-y-5 w-full">
 			<CardHeader>
@@ -30,9 +39,18 @@ const ChooseService = () => {
 					isSelected={selectedService === "publisher"}
 				/>
 			</CardContent>
-			<Button className="w-full mt-6 rounded-xl shadow-button text-center text-lg">
+			<Button className="w-full mt-6 rounded-xl shadow-button text-center text-lg" onClick={()=>handleConfirm()}>
 				<Cardholder className="w-6 h-6 mr-2" /> Confirm
 			</Button>
+			<div className="mt-3 text-center">
+        <Label htmlFor="voting">Here to vote? </Label>
+        <Label
+          className="underline cursor-pointer"
+          onClick={() => router.push("/vote")}
+        >
+          Create a profile
+        </Label>
+      </div>
 		</Card>
 	);
 };

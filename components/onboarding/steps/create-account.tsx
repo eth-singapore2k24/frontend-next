@@ -18,10 +18,23 @@ interface CreateAccountProps {
 }
 
 const CreateAccount = (props: CreateAccountProps) => {
-  const router = useRouter();
+
   const handleConnect = async () => {
     console.log("hi");
-
+const handleWorldCoinConnect = async () => {
+		console.log("hi");
+		try {
+			const sessionx = await signIn("worldcoin");
+			console.log("session: ", sessionx);
+			const { data: session } = useSession();
+			console.log("sessionUser: ", session.user);
+			if (session) {
+				router.push("/onboard");
+			}
+		} catch (error) {
+			console.error("error: ", error);
+		}
+	}
     try {
       const sessionx = await signIn("worldcoin")
       console.log("session: ", sessionx);
@@ -49,17 +62,7 @@ const CreateAccount = (props: CreateAccountProps) => {
         >
           <Cardholder className="w-6 h-6 mr-2" /> Connect to WorldCoin
         </Button>
-      </CardContent>
-      <Separator />
-      <div className="mt-3 text-center">
-        <Label htmlFor="voting">Here to vote? </Label>
-        <Label
-          className="underline cursor-pointer"
-          onClick={() => router.push("/vote")}
-        >
-          Create a profile
-        </Label>
-      </div>
+      </CardContent>      
     </Card>
   );
 };
